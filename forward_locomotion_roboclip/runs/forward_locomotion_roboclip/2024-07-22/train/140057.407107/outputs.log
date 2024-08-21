@@ -1,0 +1,331 @@
+══════════════════════════════════════════
+      AC_Args       
+────────────────────┬─────────────────────
+   init_noise_std   │ 1.0                 
+ actor_hidden_dims  │ [512, 256, 128]     
+ critic_hidden_dims │ [512, 256, 128]     
+     activation     │ elu                 
+adaptation_module_branch_hidden_dims│ [[256, 32]]         
+env_factor_encoder_branch_input_dims│ [18]                
+env_factor_encoder_branch_latent_dims│ [18]                
+env_factor_encoder_branch_hidden_dims│ [[256, 128]]        
+════════════════════╧═════════════════════
+      PPO_Args      
+────────────────────┬─────────────────────
+  value_loss_coef   │ 1.0                 
+use_clipped_value_loss│ True                
+     clip_param     │ 0.2                 
+    entropy_coef    │ 0.01                
+num_learning_epochs │ 5                   
+  num_mini_batches  │ 4                   
+   learning_rate    │ 0.001               
+adaptation_module_learning_rate│ 0.001               
+num_adaptation_module_substeps│ 1                   
+      schedule      │ adaptive            
+       gamma        │ 0.99                
+        lam         │ 0.95                
+     desired_kl     │ 0.01                
+   max_grad_norm    │ 1.0                 
+════════════════════╧═════════════════════
+     RunnerArgs     
+────────────────────┬─────────────────────
+algorithm_class_name│ PPO                 
+ num_steps_per_env  │ 24                  
+   max_iterations   │ 1500                
+   save_interval    │ 400                 
+save_video_interval │ 1                   
+      log_freq      │ 100                 
+       resume       │ False               
+      load_run      │ -1                  
+     checkpoint     │ -1                  
+    resume_path     │ None                
+════════════════════╧═════════════════════
+        Cfg         
+────────────────────┬─────────────────────
+        env         │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.env'>
+      terrain       │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.terrain'>
+ commands_original  │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.commands_original'>
+commands_constrained│ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.commands_constrained'>
+     init_state     │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.init_state'>
+      control       │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.control'>
+       asset        │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.asset'>
+domain_rand_original│ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.domain_rand_original'>
+ domain_rand_eureka │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.domain_rand_eureka'>
+  domain_rand_off   │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.domain_rand_off'>
+  rewards_original  │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.rewards_original'>
+   rewards_eureka   │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.rewards_eureka'>
+   normalization    │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.normalization'>
+       noise        │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.noise'>
+       viewer       │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.viewer'>
+        sim         │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.sim'>
+      commands      │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.commands_original'>
+      rewards       │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.rewards_eureka'>
+    domain_rand     │ <class 'forward_locomotion_roboclip.go1_gym.envs.base.legged_robot_config.Cfg.domain_rand_off'>
+   command_ranges   │ {'command_curriculum': False, 'max_reverse_curriculum': 1.0, 'max_forward_curriculum': 1.0, 'forward_curriculum_threshold': 0.8, 'yaw_command_curriculum': False, 'max_yaw_curriculum': 1.0, 'yaw_curriculum_threshold': 0.5, 'num_commands': 4, 'resampling_time': 10.0, 'heading_command': False, 'global_reference': False, 'num_lin_vel_bins': 30, 'lin_vel_step': 0.3, 'num_ang_vel_bins': 30, 'ang_vel_step': 0.3, 'distribution_update_extension_distance': 1, 'curriculum_seed': 100, 'lin_vel_x': [-0.6, 0.6], 'lin_vel_y': [-0.6, 0.6], 'ang_vel_yaw': [-1, 1], 'body_height_cmd': [-0.05, 0.05], 'impulse_height_commands': False, 'limit_vel_x': [-10.0, 10.0], 'limit_vel_y': [-0.6, 0.6], 'limit_vel_yaw': [-10.0, 10.0], 'heading': [-3.14, 3.14]}
+════════════════════╧═════════════════════
+╒══════════════════════════════════════════════╤════════════════════╕
+│      train/episode/episode length/mean       │         0.         │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/rew similarity reward/mean   │         0.         │
+├──────────────────────────────────────────────┼────────────────────┤
+│         train/episode/rew total/mean         │         0.         │
+├──────────────────────────────────────────────┼────────────────────┤
+│        train/episode/rew success/mean        │         0.         │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base lin vel/mean        │       0.293        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base ang vel/mean        │       5.715        │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/forward base lin vel/mean    │        0.12        │
+├──────────────────────────────────────────────┼────────────────────┤
+│train/episode/forward global base lin vel/mean│       0.197        │
+├──────────────────────────────────────────────┼────────────────────┤
+│              time elapsed/mean               │       1.668        │
+├──────────────────────────────────────────────┼────────────────────┤
+│                time iter/mean                │       1.668        │
+├──────────────────────────────────────────────┼────────────────────┤
+│             adaptation loss/mean             │       0.029        │
+├──────────────────────────────────────────────┼────────────────────┤
+│             mean value loss/mean             │       0.005        │
+├──────────────────────────────────────────────┼────────────────────┤
+│           mean surrogate loss/mean           │       -0.047       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  timesteps                   │        240         │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  iterations                  │         0          │
+╘══════════════════════════════════════════════╧════════════════════╛
+
+══════════════════════════════════════════
+        job         
+────────────────────┬─────────────────────
+       status       │ running             
+      runTime       │ 2024-07-22 14:01:26.453808
+════════════════════╧═════════════════════
+╒══════════════════════════════════════════════╤════════════════════╕
+│      train/episode/episode length/mean       │       196.93       │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/rew similarity reward/mean   │       2.142        │
+├──────────────────────────────────────────────┼────────────────────┤
+│         train/episode/rew total/mean         │       2.142        │
+├──────────────────────────────────────────────┼────────────────────┤
+│        train/episode/rew success/mean        │       0.011        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base lin vel/mean        │       0.401        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base ang vel/mean        │       3.746        │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/forward base lin vel/mean    │       -0.024       │
+├──────────────────────────────────────────────┼────────────────────┤
+│train/episode/forward global base lin vel/mean│       0.048        │
+├──────────────────────────────────────────────┼────────────────────┤
+│              time elapsed/mean               │        93.2        │
+├──────────────────────────────────────────────┼────────────────────┤
+│                time iter/mean                │       2.262        │
+├──────────────────────────────────────────────┼────────────────────┤
+│             adaptation loss/mean             │         0.         │
+├──────────────────────────────────────────────┼────────────────────┤
+│             mean value loss/mean             │       0.309        │
+├──────────────────────────────────────────────┼────────────────────┤
+│           mean surrogate loss/mean           │       -0.038       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  timesteps                   │       24240        │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  iterations                  │        100         │
+╘══════════════════════════════════════════════╧════════════════════╛
+
+══════════════════════════════════════════
+        job         
+────────────────────┬─────────────────────
+       status       │ running             
+      runTime       │ 2024-07-22 14:05:12.802047
+════════════════════╧═════════════════════
+╒══════════════════════════════════════════════╤════════════════════╕
+│      train/episode/episode length/mean       │       57.151       │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/rew similarity reward/mean   │       0.611        │
+├──────────────────────────────────────────────┼────────────────────┤
+│         train/episode/rew total/mean         │       0.611        │
+├──────────────────────────────────────────────┼────────────────────┤
+│        train/episode/rew success/mean        │       0.001        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base lin vel/mean        │       0.696        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base ang vel/mean        │       3.711        │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/forward base lin vel/mean    │       -0.09        │
+├──────────────────────────────────────────────┼────────────────────┤
+│train/episode/forward global base lin vel/mean│       -0.039       │
+├──────────────────────────────────────────────┼────────────────────┤
+│              time elapsed/mean               │      441.442       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                time iter/mean                │       4.281        │
+├──────────────────────────────────────────────┼────────────────────┤
+│             adaptation loss/mean             │         0.         │
+├──────────────────────────────────────────────┼────────────────────┤
+│             mean value loss/mean             │       4.365        │
+├──────────────────────────────────────────────┼────────────────────┤
+│           mean surrogate loss/mean           │       -0.032       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  timesteps                   │       48240        │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  iterations                  │        200         │
+╘══════════════════════════════════════════════╧════════════════════╛
+
+══════════════════════════════════════════
+        job         
+────────────────────┬─────────────────────
+       status       │ running             
+      runTime       │ 2024-07-22 14:12:20.913117
+════════════════════╧═════════════════════
+╒══════════════════════════════════════════════╤════════════════════╕
+│      train/episode/episode length/mean       │       46.304       │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/rew similarity reward/mean   │       0.612        │
+├──────────────────────────────────────────────┼────────────────────┤
+│         train/episode/rew total/mean         │       0.612        │
+├──────────────────────────────────────────────┼────────────────────┤
+│        train/episode/rew success/mean        │       0.001        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base lin vel/mean        │        0.74        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base ang vel/mean        │       4.253        │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/forward base lin vel/mean    │       -0.04        │
+├──────────────────────────────────────────────┼────────────────────┤
+│train/episode/forward global base lin vel/mean│       -0.021       │
+├──────────────────────────────────────────────┼────────────────────┤
+│              time elapsed/mean               │      896.948       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                time iter/mean                │       4.938        │
+├──────────────────────────────────────────────┼────────────────────┤
+│             adaptation loss/mean             │         0.         │
+├──────────────────────────────────────────────┼────────────────────┤
+│             mean value loss/mean             │       0.244        │
+├──────────────────────────────────────────────┼────────────────────┤
+│           mean surrogate loss/mean           │       -0.031       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  timesteps                   │       72240        │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  iterations                  │        300         │
+╘══════════════════════════════════════════════╧════════════════════╛
+
+══════════════════════════════════════════
+        job         
+────────────────────┬─────────────────────
+       status       │ running             
+      runTime       │ 2024-07-22 14:20:34.763407
+════════════════════╧═════════════════════
+╒══════════════════════════════════════════════╤════════════════════╕
+│      train/episode/episode length/mean       │       42.425       │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/rew similarity reward/mean   │       0.508        │
+├──────────────────────────────────────────────┼────────────────────┤
+│         train/episode/rew total/mean         │       0.508        │
+├──────────────────────────────────────────────┼────────────────────┤
+│        train/episode/rew success/mean        │       0.002        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base lin vel/mean        │       0.814        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base ang vel/mean        │       4.489        │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/forward base lin vel/mean    │       -0.021       │
+├──────────────────────────────────────────────┼────────────────────┤
+│train/episode/forward global base lin vel/mean│       -0.045       │
+├──────────────────────────────────────────────┼────────────────────┤
+│              time elapsed/mean               │      1413.704      │
+├──────────────────────────────────────────────┼────────────────────┤
+│                time iter/mean                │       5.213        │
+├──────────────────────────────────────────────┼────────────────────┤
+│             adaptation loss/mean             │         0.         │
+├──────────────────────────────────────────────┼────────────────────┤
+│             mean value loss/mean             │       0.569        │
+├──────────────────────────────────────────────┼────────────────────┤
+│           mean surrogate loss/mean           │       -0.032       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  timesteps                   │       96240        │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  iterations                  │        400         │
+╘══════════════════════════════════════════════╧════════════════════╛
+
+══════════════════════════════════════════
+        job         
+────────────────────┬─────────────────────
+       status       │ running             
+      runTime       │ 2024-07-22 14:29:16.017204
+════════════════════╧═════════════════════
+╒══════════════════════════════════════════════╤════════════════════╕
+│      train/episode/episode length/mean       │       45.504       │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/rew similarity reward/mean   │       0.351        │
+├──────────────────────────────────────────────┼────────────────────┤
+│         train/episode/rew total/mean         │       0.351        │
+├──────────────────────────────────────────────┼────────────────────┤
+│        train/episode/rew success/mean        │       0.005        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base lin vel/mean        │       0.828        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base ang vel/mean        │       4.431        │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/forward base lin vel/mean    │       -0.061       │
+├──────────────────────────────────────────────┼────────────────────┤
+│train/episode/forward global base lin vel/mean│       -0.108       │
+├──────────────────────────────────────────────┼────────────────────┤
+│              time elapsed/mean               │      1921.933      │
+├──────────────────────────────────────────────┼────────────────────┤
+│                time iter/mean                │       5.064        │
+├──────────────────────────────────────────────┼────────────────────┤
+│             adaptation loss/mean             │         0.         │
+├──────────────────────────────────────────────┼────────────────────┤
+│             mean value loss/mean             │       0.878        │
+├──────────────────────────────────────────────┼────────────────────┤
+│           mean surrogate loss/mean           │       -0.034       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  timesteps                   │       120240       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  iterations                  │        500         │
+╘══════════════════════════════════════════════╧════════════════════╛
+
+══════════════════════════════════════════
+        job         
+────────────────────┬─────────────────────
+       status       │ running             
+      runTime       │ 2024-07-22 14:37:42.458139
+════════════════════╧═════════════════════
+╒══════════════════════════════════════════════╤════════════════════╕
+│      train/episode/episode length/mean       │       36.77        │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/rew similarity reward/mean   │       0.407        │
+├──────────────────────────────────────────────┼────────────────────┤
+│         train/episode/rew total/mean         │       0.407        │
+├──────────────────────────────────────────────┼────────────────────┤
+│        train/episode/rew success/mean        │       0.001        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base lin vel/mean        │       0.813        │
+├──────────────────────────────────────────────┼────────────────────┤
+│       train/episode/base ang vel/mean        │       4.884        │
+├──────────────────────────────────────────────┼────────────────────┤
+│   train/episode/forward base lin vel/mean    │       0.014        │
+├──────────────────────────────────────────────┼────────────────────┤
+│train/episode/forward global base lin vel/mean│       -0.076       │
+├──────────────────────────────────────────────┼────────────────────┤
+│              time elapsed/mean               │      2466.521      │
+├──────────────────────────────────────────────┼────────────────────┤
+│                time iter/mean                │       5.725        │
+├──────────────────────────────────────────────┼────────────────────┤
+│             adaptation loss/mean             │         0.         │
+├──────────────────────────────────────────────┼────────────────────┤
+│             mean value loss/mean             │       3.031        │
+├──────────────────────────────────────────────┼────────────────────┤
+│           mean surrogate loss/mean           │       -0.032       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  timesteps                   │       144240       │
+├──────────────────────────────────────────────┼────────────────────┤
+│                  iterations                  │        600         │
+╘══════════════════════════════════════════════╧════════════════════╛
+
+══════════════════════════════════════════
+        job         
+────────────────────┬─────────────────────
+       status       │ running             
+      runTime       │ 2024-07-22 14:47:14.913553
+════════════════════╧═════════════════════
